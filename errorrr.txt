@@ -1,0 +1,12 @@
+[vhalinvascop0@vac20adoecs805 test]$ [vhalinvascop0@vac20adoecs805 test]$ python3 ops-at-working.py --username=admin --password=smooch1991
+-bash: [vhalinvascop0@vac20adoecs805: command not found
+[vhalinvascop0@vac20adoecs805 test]$
+[vhalinvascop0@vac20adoecs805 test]$
+[vhalinvascop0@vac20adoecs805 test]$  Issue creating access token from 10.247.92.40/api/v2/tokens/.. Exit.
+-bash: Issue: command not found
+[vhalinvascop0@vac20adoecs805 test]$ python3 ops-at-working.py --username=admin --password=PwD4An$!bleT0wer
+
+
+ Issue creating access token from ansible.vaec.va.gov/api/v2/tokens/.. Exit.
+[vhalinvascop0@vac20adoecs805 test]$
+
