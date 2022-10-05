@@ -21,7 +21,7 @@ password=args.password
 
 
 # Ansible tower host address.
-host = "10.247.92.40"
+host = "ansible.vaec.va.gov"
 
 
 
