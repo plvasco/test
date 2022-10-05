@@ -1,0 +1,19 @@
+[vhalinvascop0@vac20adoecs805 test]$ python3 ops-at-working.py --username=admin --password=smooch1991
+
+
+Connection to ec2-13-56-76-86.us-west-1.compute.amazonaws.com is SUCCESSFUL with response 200.
+
+
+Parsing response from server:
+  {'count': 3, 'next': None, 'previous': None, 'results': [{'id': 1, 'type': 'user', 'url': '/api/v2/users/1/', 'related': {'teams': '/api/v2/users/1/teams/', 'organizations': '/api/v2/users/1/organizations/', 'admin_of_organizations': '/api/v2/users/1/admin_of_organizations/', 'projects': '/api/v2/users/1/projects/', 'credentials': '/api/v2/users/1/credentials/', 'roles': '/api/v2/users/1/roles/', 'activity_stream': '/api/v2/users/1/activity_stream/', 'access_list': '/api/v2/users/1/access_list/',
+'tokens': '/api/v2/users/1/tokens/', 'authorized_tokens': '/api/v2/users/1/authorized_tokens/', 'personal_tokens': '/api/v2/users/1/personal_tokens/'}, 'summary_fields': {'user_capabilities': {'edit': True, 'delete': False}}, 'created': '2022-10-05T14:33:00.019045Z', 'username': 'admin', 'first_name': '', 'last_name': '', 'email': 'admin@example.com', 'is_superuser': True, 'is_system_auditor': False, 'ldap_dn': '', 'last_login': '2022-10-05T16:04:34.131655Z', 'external_account': None, 'auth': []}, {'id': 2, 'type': 'user', 'url': '/api/v2/users/2/', 'related': {'teams': '/api/v2/users/2/teams/', 'organizations': '/api/v2/users/2/organizations/', 'admin_of_organizations': '/api/v2/users/2/admin_of_organizations/', 'projects': '/api/v2/users/2/projects/', 'credentials': '/api/v2/users/2/credentials/', 'roles': '/api/v2/users/2/roles/', 'activity_stream': '/api/v2/users/2/activity_stream/', 'access_list': '/api/v2/users/2/access_list/', 'tokens': '/api/v2/users/2/tokens/', 'authorized_tokens': '/api/v2/users/2/authorized_tokens/', 'personal_tokens': '/api/v2/users/2/personal_tokens/'}, 'summary_fields': {'user_capabilities': {'edit': True, 'delete': True}}, 'created': '2022-10-05T16:03:37.334766Z', 'username': 'engy', 'first_name': 'engy', 'last_name': 'GULERIA', 'email': 'mavenishere@gmail.com', 'is_superuser': True, 'is_system_auditor': False, 'ldap_dn': '', 'last_login': None, 'external_account': None, 'auth': []}, {'id': 3, 'type': 'user', 'url': '/api/v2/users/3/', 'related': {'teams': '/api/v2/users/3/teams/', 'organizations': '/api/v2/users/3/organizations/', 'admin_of_organizations': '/api/v2/users/3/admin_of_organizations/', 'projects': '/api/v2/users/3/projects/', 'credentials': '/api/v2/users/3/credentials/', 'roles': '/api/v2/users/3/roles/', 'activity_stream': '/api/v2/users/3/activity_stream/', 'access_list': '/api/v2/users/3/access_list/', 'tokens': '/api/v2/users/3/tokens/', 'authorized_tokens': '/api/v2/users/3/authorized_tokens/', 'personal_tokens': '/api/v2/users/3/personal_tokens/'}, 'summary_fields': {'user_capabilities': {'edit': True, 'delete': True}}, 'created': '2022-10-05T16:46:47.373520Z', 'username': 'pvasco', 'first_name': 'pietto', 'last_name': 'vasco', 'email': 'pitto@engy.com', 'is_superuser': False, 'is_system_auditor': False, 'ldap_dn': '', 'last_login': None, 'external_account':
+None, 'auth': []}]}.
+
+
+User admin last logged in on 2022-10-05T16:04:34.131655Z
+User engy last logged in on None
+Time data 'None' does not match format '%Y-%m-%d'
+User pvasco last logged in on None
+Time data 'None' does not match format '%Y-%m-%d'
+[]
+
