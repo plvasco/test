@@ -21,7 +21,7 @@ password=args.password
 
 
 # Ansible tower host address.
-host = "ec2-13-56-76-86.us-west-1.compute.amazonaws.com"
+host = "10.247.92.40"
 
 
 
