@@ -1,0 +1,6 @@
+[name0@server test]$ python3 ./ops-at-working-requests.py --u admin -p PwD4An$!bleT0wer
+/usr/lib/python3.6/site-packages/urllib3/connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+
+An Http Error occurred: HTTPError('401 Client Error: Unauthorized for url: https://server/api/v2/tokens/',)
+
