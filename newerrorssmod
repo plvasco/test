@@ -1,0 +1,28 @@
+root@srv-builder iam-read-only]# terraform validate
+╷
+│ Error: Reference to undeclared input variable
+│ 
+│   on main.tf line 35, in module "iam_read_only_policy":
+│   35:   name        = var.iam_policy_name
+│ 
+│ An input variable with the name "iam_policy_name" has not been declared. This variable can be declared with a variable
+│ "iam_policy_name" {} block.
+╵
+╷
+│ Error: Reference to undeclared input variable
+│ 
+│   on main.tf line 53, in module "iam_assumable_role_custom_trust_policy":
+│   53:   role_name = var.iam_role_name
+│ 
+│ An input variable with the name "iam_role_name" has not been declared. This variable can be declared with a variable
+│ "iam_role_name" {} block.
+╵
+╷
+│ Error: Reference to undeclared input variable
+│ 
+│   on main.tf line 66, in data "aws_iam_policy_document" "custom_trust_policy":
+│   66:       identifiers = var.iam_role_trust_policy_list
+│ 
+│ An input variable with the name "iam_role_trust_policy_list" has not been declared. This variable can be declared with a
+│ variable "iam_role_trust_policy_list" {} block.
+╵
