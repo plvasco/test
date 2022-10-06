@@ -87,7 +87,7 @@ server_info=get_ansible_tower_version(host, token)
 print(f"\nServer info: Ansible Tower version => {server_info}\n")
 
 # Search for user who haven't logged in for last n days. i.e 30
-days_before_marked_inactive = 30
+days_before_marked_inactive = 10
 
 # Get users list.
 
