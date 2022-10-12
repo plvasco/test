@@ -1,0 +1,137 @@
+
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Clone and Configure Repository)
+[Pipeline] sh
++ set +x
+========== Clone and Configure Repository  ==========
+[Pipeline] script
+[Pipeline] {
+[Pipeline] withCredentials
+Masking supported pattern matches of $GIT_USERNAME or $GIT_PASSWORD
+[Pipeline] {
+[Pipeline] sh
+Warning: A secret was passed to "sh" using Groovy String interpolation, which is insecure.
+		 Affected argument(s) used the following variable(s): [GIT_PASSWORD, GIT_USERNAME]
+		 See https://jenkins.io/redirect/groovy-string-interpolation for details.
++ git clone https://****:****@github.ids.ray.com/IDS/pcs-xeta-terraform-aws.git
+Cloning into 'pcs-xeta-terraform-aws'...
+[Pipeline] dir
+Running in /jenkins/workspace/_pcs-xeta-terraform-aws-buid_vpc/pcs-xeta-terraform-aws
+[Pipeline] {
+[Pipeline] sh
+Warning: A secret was passed to "sh" using Groovy String interpolation, which is insecure.
+		 Affected argument(s) used the following variable(s): [GIT_PASSWORD, GIT_USERNAME]
+		 See https://jenkins.io/redirect/groovy-string-interpolation for details.
++ git remote set-url origin https://****:****@github.ids.ray.com/IDS/pcs-xeta-terraform-aws.git
+[Pipeline] sh
++ git checkout --track origin/vpc
+Switched to a new branch 'vpc'
+Branch vpc set up to track remote branch vpc from origin.
+[Pipeline] sh
++ git config --global user.email nobody@raytheon.com
+[Pipeline] sh
+Warning: A secret was passed to "sh" using Groovy String interpolation, which is insecure.
+		 Affected argument(s) used the following variable(s): [GIT_USERNAME]
+		 See https://jenkins.io/redirect/groovy-string-interpolation for details.
++ git config --global user.name ****
+[Pipeline] sh
++ git pull
+Already up-to-date.
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Terraform Init)
+[Pipeline] sh
++ set +x
+========== Terraform Init  ==========
+[Pipeline] dir
+Running in /jenkins/workspace/_pcs-xeta-terraform-aws-buid_vpc/pcs-xeta-terraform-aws
+[Pipeline] {
+[Pipeline] sh
++ pwd
+/jenkins/workspace/_pcs-xeta-terraform-aws-buid_vpc/pcs-xeta-terraform-aws
++ ls -al
+total 72
+drwxr-xr-x 11 svc-ids-pcs-admin users 4096 Oct 12 14:52 .
+drwxr-xr-x 13 svc-ids-pcs-admin users 4096 Oct 12 14:51 ..
+drwxr-xr-x  8 svc-ids-pcs-admin users 4096 Oct 12 14:52 build-modules
+drwxr-xr-x  2 svc-ids-pcs-admin users 4096 Oct 12 14:52 data-source
+drwxr-xr-x  6 svc-ids-pcs-admin users 4096 Oct 12 14:52 examples
+drwxr-xr-x  8 svc-ids-pcs-admin users 4096 Oct 12 14:53 .git
+-rw-r--r--  1 svc-ids-pcs-admin users  730 Oct 12 14:51 .gitignore
+-rwxr-xr-x  1 svc-ids-pcs-admin users 7469 Oct 12 14:52 Jenkinsfile
+-rw-r--r--  1 svc-ids-pcs-admin users 6146 Oct 12 14:51 Jenkinsfile - Copy
+drwxr-xr-x  2 svc-ids-pcs-admin users 4096 Oct 12 14:52 KMS
+drwxr-xr-x  3 svc-ids-pcs-admin users 4096 Oct 12 14:52 linux
+-rw-r--r--  1 svc-ids-pcs-admin users 1230 Oct 12 14:52 main.tf
+drwxr-xr-x  2 svc-ids-pcs-admin users 4096 Oct 12 14:51 rds-build
+-rw-r--r--  1 svc-ids-pcs-admin users 3790 Oct 12 14:52 READme.md
+drwxr-xr-x  2 svc-ids-pcs-admin users 4096 Oct 12 14:52 security-group
+drwxr-xr-x  2 svc-ids-pcs-admin users 4096 Oct 12 14:51 storage
+[Pipeline] sh
++ terraform init -no-color
+Initializing modules...
+- iam_read_only_user in build-modules/iam-read-only
+Downloading registry.terraform.io/terraform-aws-modules/iam/aws 5.5.1 for iam_read_only_user.iam_assumable_role_custom_trust_policy...
+- iam_read_only_user.iam_assumable_role_custom_trust_policy in .terraform/modules/iam_read_only_user.iam_assumable_role_custom_trust_policy/modules/iam-assumable-role
+Downloading registry.terraform.io/terraform-aws-modules/iam/aws 5.5.1 for iam_read_only_user.iam_read_only_policy...
+- iam_read_only_user.iam_read_only_policy in .terraform/modules/iam_read_only_user.iam_read_only_policy/modules/iam-read-only-policy
+- vpc in build-modules/vpc-build
+There are some problems with the configuration, described below.
+
+The Terraform configuration must be valid before initialization so that
+Terraform can determine which modules and providers need to be installed.
+
+Error: Cannot override provider configuration
+
+  on main.tf line 33, in module "vpc":
+  33:       aws = aws
+
+The configuration of module.vpc has its own local configuration for aws, and
+so it cannot accept an overridden configuration provided by the root module.
+
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Terraform Validate)
+Stage "Terraform Validate" skipped due to earlier failure(s)
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Terraform Plan)
+Stage "Terraform Plan" skipped due to earlier failure(s)
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
++ set +x
+========== Post-Processing - FAILURE  ==========
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+
+GitHub has been notified of this commit’s build result
+
+Finished: FAILURE
