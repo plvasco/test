@@ -29,3 +29,20 @@ iam-read-only  kms-build  linux-build  main.tf  README.md  sg-build  storage-bui
 │ aws_vpc_peering_connection_accepter.transit, after which you can remove the provider configuration again.
 ╵
 [root@prc-builder vpc-build]# 
+
+provider files
+
+[root@prc-builder vpc-build]# cat provider.tf 
+
+#provider "aws" {
+#  max_retries = 1
+#  region     = "nsa"
+#  access_key = "na"
+#  secret_key = "na"
+#  assume_role {
+#    # The role ARN within Account B to AssumeRole into.
+#    role_arn    = "arn:aws-us-gov:iam::ddd:role/wg1-cpi-d33d1-dtcp01-automation"
+#    # The Automation Account ID to assume
+#    external_id = "clud/d33d1-dtcp01/automation"
+#  }
+#}
