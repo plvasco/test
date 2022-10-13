@@ -1,0 +1,31 @@
+/home/user/pcs-xeta-test-aws/build-modules
+[root@prc-builder build-modules]# terraform validate
+╷
+│ Error: Module not installed
+│ 
+│   on main.tf line 17:
+│   17: module "iam_read_only_user" {
+│ 
+│ This module's local cache directory  could not be read. Run "terraform init" to install all modules required by this configuration.
+╵
+[root@prc-builder build-modules]# cd build-modules/
+bash: cd: build-modules/: No such file or directory
+[root@prc-builder build-modules]# ls
+iam-read-only  kms-build  linux-build  main.tf  README.md  sg-build  storage-build  vpc-build
+[root@prc-builder build-modules]# cd vpc-build/
+[root@prc-builder vpc-build]# terraform validate
+╷
+│ Error: Provider configuration not present
+│ 
+│ To work with aws_route.cs-transit-peer-route its original provider configuration at provider["registry.terraform.io/hashicorp/aws"].remote is required, but it has been removed. This occurs when a
+│ provider configuration is removed while objects created by that provider still exist in the state. Re-add the provider configuration to destroy aws_route.cs-transit-peer-route, after which you can
+│ remove the provider configuration again.
+╵
+╷
+│ Error: Provider configuration not present
+│ 
+│ To work with aws_vpc_peering_connection_accepter.transit its original provider configuration at provider["registry.terraform.io/hashicorp/aws"].remote is required, but it has been removed. This
+│ occurs when a provider configuration is removed while objects created by that provider still exist in the state. Re-add the provider configuration to destroy
+│ aws_vpc_peering_connection_accepter.transit, after which you can remove the provider configuration again.
+╵
+[root@prc-builder vpc-build]# 
