@@ -1,0 +1,145 @@
+[root@prc-builder pcs-xeta-terraform-aws]# terraform init -upgrade
+Upgrading modules...
+- iam_read_only_user in build-modules/iam-read-only
+Downloading registry.terraform.io/terraform-aws-modules/iam/aws 5.5.2 for iam_read_only_user.iam_assumable_role_custom_trust_policy...
+- iam_read_only_user.iam_assumable_role_custom_trust_policy in .terraform/modules/iam_read_only_user.iam_assumable_role_custom_trust_policy/modules/iam-assumable-role
+Downloading registry.terraform.io/terraform-aws-modules/iam/aws 5.5.2 for iam_read_only_user.iam_read_only_policy...
+- iam_read_only_user.iam_read_only_policy in .terraform/modules/iam_read_only_user.iam_read_only_policy/modules/iam-read-only-policy
+- vpc in build-modules/vpc-build
+
+Initializing the backend...
+
+Initializing provider plugins...
+- Finding hashicorp/aws versions matching ">= 2.7.0, >= 4.0.0, 4.32.0"...
+- Using previously-installed hashicorp/aws v4.32.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+[root@prc-builder pcs-xeta-terraform-aws]# terraform validate
+╷
+│ Error: Reference to undeclared input variable
+│ 
+│   on main.tf line 17, in provider "aws":
+│   17:     region = var.region
+│ 
+│ An input variable with the name "region" has not been declared. This variable can be declared with a variable "region" {}
+│ block.
+╵
+╷
+│ Error: Reference to undeclared input variable
+│ 
+│   on main.tf line 18, in provider "aws":
+│   18:     profile = var.profile-remote
+│ 
+│ An input variable with the name "profile-remote" has not been declared. This variable can be declared with a variable
+│ "profile-remote" {} block.
+╵
+╷
+│ Error: Reference to undeclared input variable
+│ 
+│   on main.tf line 36, in module "vpc":
+│   36:     region = var.region
+│ 
+│ An input variable with the name "region" has not been declared. This variable can be declared with a variable "region" {}
+│ block.
+╵
+╷
+│ Error: Reference to undeclared local value
+│ 
+│   on main.tf line 37, in module "vpc":
+│   37:     tenant_name = local.tenant_name
+│ 
+│ A local value with the name "tenant_name" has not been declared.
+╵
+╷
+│ Error: Reference to undeclared local value
+│ 
+│   on main.tf line 38, in module "vpc":
+│   38:     tme_cidr = local.tme_cidr
+│ 
+│ A local value with the name "tme_cidr" has not been declared.
+╵
+╷
+│ Error: Reference to undeclared local value
+│ 
+│   on main.tf line 39, in module "vpc":
+│   39:     tce_cidr = local.tce_cidr    
+│ 
+│ A local value with the name "tce_cidr" has not been declared.
+╵
+╷
+│ Error: Reference to undeclared local value
+│ 
+│   on main.tf line 40, in module "vpc":
+│   40:     tme_a = local.tme_a
+│ 
+│ A local value with the name "tme_a" has not been declared.
+╵
+╷
+│ Error: Reference to undeclared local value
+│ 
+│   on main.tf line 41, in module "vpc":
+│   41:     tme_b = local.tme_a
+│ 
+│ A local value with the name "tme_a" has not been declared.
+╵
+╷
+│ Error: Reference to undeclared local value
+│ 
+│   on main.tf line 42, in module "vpc":
+│   42:     svc_a = local.svc_a
+│ 
+│ A local value with the name "svc_a" has not been declared.
+╵
+╷
+│ Error: Reference to undeclared local value
+│ 
+│   on main.tf line 43, in module "vpc":
+│   43:     svc_b = local.svc_b
+│ 
+│ A local value with the name "svc_b" has not been declared.
+╵
+╷
+│ Error: Reference to undeclared input variable
+│ 
+│   on main.tf line 44, in module "vpc":
+│   44:     cs_account_id = var.cs_account_id
+│ 
+│ An input variable with the name "cs_account_id" has not been declared. This variable can be declared with a variable
+│ "cs_account_id" {} block.
+╵
+╷
+│ Error: Reference to undeclared input variable
+│ 
+│   on main.tf line 45, in module "vpc":
+│   45:     cs_transit_vpc = var.cs_transit_vpc
+│ 
+│ An input variable with the name "cs_transit_vpc" has not been declared. This variable can be declared with a variable
+│ "cs_transit_vpc" {} block.
+╵
+╷
+│ Error: Reference to undeclared input variable
+│ 
+│   on main.tf line 46, in module "vpc":
+│   46:     cs_transit_cidr = var.cs_transit_cidr
+│ 
+│ An input variable with the name "cs_transit_cidr" has not been declared. This variable can be declared with a variable
+│ "cs_transit_cidr" {} block.
+╵
+╷
+│ Error: Reference to undeclared input variable
+│ 
+│   on main.tf line 47, in module "vpc":
+│   47:     cs_transit_route_table = var.cs_transit_route_table
+│ 
+│ An input variable with the name "cs_transit_route_table" has not been declared. This variable can be declared with a variable
+│ "cs_transit_route_table" {} block.
+╵
+[root@prc-builder pcs-xeta-terraform-aws]# 
